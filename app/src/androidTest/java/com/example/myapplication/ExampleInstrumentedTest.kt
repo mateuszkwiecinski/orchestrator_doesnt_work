@@ -24,4 +24,11 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.example.myapplication", appContext.packageName)
     }
+
+    @Test
+    fun shouldFail() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("something.doesn.work", appContext.packageName)
+    }
 }
